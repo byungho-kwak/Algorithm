@@ -16,7 +16,7 @@ public class Main {
 			input[i] = sc.nextInt();
 		DP[0] = 0;
 		DP[1] = input[1];
-		int MAX = 0;
+		int MAX = DP[1];
 		int maxIdx=0;
 		
 		for(int i=2; i<=N; i++) {
