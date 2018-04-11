@@ -28,8 +28,8 @@ public class Main {
 		
 		int ret = 999999999;
 		for(int next=0; next<N; next++) {
-			// 해당 비트에 불이 꺼져 있다면 (해당 비트에 불이 꺼져있다면)
-			if((visited&(1<<next))==0) {
+			// 해당 비트에 불이 꺼져 있고 (해당 비트를 방문한 적이 없다면) && pos에서 next로 간선이 존재한다면
+			if((visited&(1<<next))==0 && Graph[pos][next]>0) {
 				// 재귀 진행
 				// visited|1<<next : 다음 방문할 곳을 비트에 불 켜기
 				int tmp = Graph[pos][next] + solve(next, visited|1<<next);
